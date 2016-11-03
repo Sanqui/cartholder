@@ -1,3 +1,5 @@
+PRECISION = 25;
+
 module hulled_cart(size, thickness, front_square=false, rear_square=false) {
     // draw a cart including a square or circle hull
     hull() {
@@ -13,7 +15,7 @@ module hulled_cart(size, thickness, front_square=false, rear_square=false) {
                         || (corner_j == 1 && rear_square)) {
                         square(thickness, center=true);
                     } else {
-                        circle(thickness/2);
+                        circle(thickness/2, $fn=PRECISION);
                     }
                 }
             }
@@ -65,7 +67,7 @@ module cartholder_part(size, spacing, thickness, visibility, raise, delta, front
     }
 }
 
-module cartholder(size=[85, 54, 1], thickness=3, spacing=1, carts=4, delta=25, visibility=0.3, rear_visibility=0.2, angle=0, crop_bottom=false, show_carts=false) {
+module cartholder(size=[85, 54, 1], thickness=3, spacing=1, carts=4, delta=25, visibility=0.8, rear_visibility=0.3, angle=22.5, crop_bottom=true, show_carts=false) {
     // hard conditions in the assignment
     if (len(size) > 1
         && size[0] > 0 && size[1] > 0
@@ -130,6 +132,8 @@ module cartholder(size=[85, 54, 1], thickness=3, spacing=1, carts=4, delta=25, v
    }
 }
 
+show_carts = true;
 angle = 22.5;
-cartholder([65, 57, 7.5], thickness=3, spacing=1, carts=4, delta=25, visibility=0.8, angle=angle, rear_visibility=0.3, crop_bottom=true, show_carts=false);
+
+cartholder([65, 57, 7.5], thickness=3, spacing=1, carts=4, delta=25, visibility=0.8, angle=angle, rear_visibility=0.3, crop_bottom=true, show_carts=show_carts);
 
