@@ -1,5 +1,7 @@
 use <cartholder.scad>
 
-cartridge_dimensions = [65, 57, 7.5];
+DEBUG = true;
 
-cartholder(cartridge_dimensions);
+cartridge_dimensions = [69, 109, 16];
+
+cartholder(cartridge_dimensions, show_carts=DEBUG);

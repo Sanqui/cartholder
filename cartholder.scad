@@ -36,7 +36,7 @@ module hulled_cart_border(size, spacing, thickness, front_square=false, rear_squ
     }
 }
 
-module cartholder_part(size, spacing, thickness, visibility, raise, delta, front, rear, rear_visibility, extend_down=10, show_carts=false) {
+module cartholder_part(size, spacing, thickness, visibility, raise, delta, front, rear, rear_visibility, extend_down=20, show_carts=false) {
     // there are three sections:
     // filled
     translate([0, 0, -extend_down]) {
