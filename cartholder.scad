@@ -67,7 +67,16 @@ module cartholder_part(size, spacing, thickness, visibility, raise, delta, front
     }
 }
 
-module cartholder(size=[85, 54, 1], thickness=3, spacing=1, carts=4, delta=25, visibility=0.8, rear_visibility=0.3, angle=22.5, crop_bottom=true, show_carts=false) {
+module cartholder(size=[85, 54, 1], 
+    thickness=2,
+    spacing=0.5,
+    carts=4,
+    delta=27.5,
+    visibility=0.925,
+    angle=22.5,
+    rear_visibility=0.6,
+    crop_bottom=true,
+    show_carts=false) {
     // hard conditions in the assignment
     if (len(size) > 1
         && size[0] > 0 && size[1] > 0
@@ -115,7 +124,7 @@ module cartholder(size=[85, 54, 1], thickness=3, spacing=1, carts=4, delta=25, v
                 
                 if (angle) {
                     // add a back stand for stability
-                    translate([-holder_width/2, holder_length/2, 0])
+                    translate([-holder_width/2, holder_length/8, 0])
                     rotate([-angle, 0, 0])
                     translate([0, -thickness, 0])
                     cube([holder_width, holder_height, holder_height/4]);
@@ -132,8 +141,18 @@ module cartholder(size=[85, 54, 1], thickness=3, spacing=1, carts=4, delta=25, v
    }
 }
 
-show_carts = true;
+//show_carts = true;
+show_carts = false;
 angle = 22.5;
 
-cartholder([65, 57, 7.5], thickness=3, spacing=1, carts=4, delta=25, visibility=0.8, angle=angle, rear_visibility=0.3, crop_bottom=true, show_carts=show_carts);
+cartholder([65, 57, 7.5],
+    thickness=2,
+    spacing=0.9,
+    carts=4,
+    delta=27.5,
+    visibility=0.925,
+    angle=angle,
+    rear_visibility=0.7,
+    crop_bottom=true,
+    show_carts=show_carts);
 

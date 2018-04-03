@@ -1,6 +1,6 @@
 use <cartholder.scad>
 
-DEBUG = true;
+DEBUG = false;
 
 cartridge_dimensions = [65, 57, 7.5];
 
